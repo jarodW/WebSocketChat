@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Websocket Chat</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="regController">
+		<section class="login-info">
+			<div class="container">
+				<div class="row">
+					<h2>Websocket Chat</h2>
+
+					<form class="form-horizontal">
+						<fieldset>
+
+
+							<legend>Register</legend>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="textinput">Username</label>
+								<div class="col-md-4">
+									<input id="username" name="username"
+										placeholder="Enter your Username"
+										class="form-control input-md" required="" type="text"
+										ng-model="username"> <span class="help-block">
+									</span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="textinput">Password</label>
+								<div class="col-md-4">
+									<input id="password" name="password"
+										placeholder="Enter your Password"
+										class="form-control input-md" required="" type="password"
+										ng-model="password"> <span class="help-block">
+									</span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="textinput">Confirm
+									Password</label>
+								<div class="col-md-4">
+									<input id="confirmPassword" name="confirmPassword"
+										placeholder="Confirm your Password"
+										class="form-control input-md" required="" type="password">
+									<span class="help-block"> </span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="singlebutton">
+								</label>
+								<div class="col-md-4">
+									<button name="singlebutton" class="btn btn-primary"
+										ng-click="register()">Register</button>
+								</div>
+							</div>
+
+						</fieldset>
+					</form>
+
+				</div>
+			</div>
+	</div>
+</body>
+
+<!-- 3rd party -->
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular-animate/angular-animate.min.js"></script>
+<script src="lib/angularjs-toaster/toaster.js"></script>
+<script src="lib/angularjs-scroll-glue/src/scrollglue.js"></script>
+<script src="lib/sockjs/sockjs.min.js"></script>
+<script src="lib/stomp/lib/stomp.min.js"></script>
+		<script src="js/app2.js"></script>
+<!-- <script>
+var app = angular.module('myApp', []);
+app.controller('regController', function($scope,$http,$window) {
+	$scope.register = function(){
+		var data = {username : $scope.username, password : $scope.password};
+        var config = {
+                headers : {
+            		'Content-Type': 'application/json'
+                }
+            }
+		$http.post("http://localhost:8080/register", data).success(function(re){
+			$window.alert("Success");
+			window.location.href = "http://localhost:8080/";
+		}).error(function(re){
+			$window.alert("User Name Exist");
+		});
+	} 
+}); -->
+</script>
+</html>

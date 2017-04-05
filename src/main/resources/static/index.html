@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="springChat">
+<head>
+<meta charset="utf-8" />
+<title>Spring WebSocket Chat</title>
+
+<link href="css/test.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+	<section class="login-info">
+		<h1 class="text-center">
+			<strong>WebSocket Chat</strong>
+		</h1>
+		<div class="container">
+			<div class="row main">
+				<div class="form-header">
+					<h3 class="text-center ">Login</h3>
+				</div>
+				<div class="main-content">
+					<form method="post">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+							</span>
+							<input id="userName" type="text" class="form-control" name="username"
+								placeholder="Enter your Username">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+							</span> 
+					        <input id="password" type="password" class="form-control" name="password" 
+					        	placeholder="Enter your Password">
+						</div>
+
+
+						<input type="submit"
+							class="btn btn-success btn-lg btn-block login-button"
+							value="Log  In" />
+					</form>
+					<a href="/signup.html" type="button" class="btn btn-danger btn-lg btn-block login-button">Register</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
