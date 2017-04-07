@@ -16,14 +16,14 @@ import com.jarod.chat.repository.ParticipantRepository;
 public class ChatConfig {
 
 	@Bean
-	@Description("Tracks user presence (join / leave) and broacasts it to all connected users")
+	//Tracks when users join leave
 	public PresenceEventListener presenceEventListener(SimpMessagingTemplate messagingTemplate) {
 		PresenceEventListener presence = new PresenceEventListener(messagingTemplate, participantRepository());
 		return presence;
 	}
 
 	@Bean
-	@Description("Keeps connected users")
+	//Contains a list of connected users
 	public ParticipantRepository participantRepository() {
 		return new ParticipantRepository();
 	}
