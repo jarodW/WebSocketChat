@@ -12,7 +12,7 @@ import com.jarod.chat.models.Login;
 import com.jarod.chat.models.Logout;
 import com.jarod.chat.repository.ParticipantRepository;
 
-//notifies when a user logs in or logs out. 
+///notifies when a user logs in or logs out. 
 public class PresenceEventListener {
 	
 	private ParticipantRepository participantRepository;
