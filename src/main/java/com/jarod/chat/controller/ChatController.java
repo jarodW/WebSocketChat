@@ -47,20 +47,16 @@ public class ChatController {
 	public Collection<Login> retrieveParticipants() {
 		return participantRepository.getActiveSessions().values();
 	}
-	
 	@MessageMapping("/chat.message")
 	public ChatMessage filterMessage(@Payload ChatMessage message, Principal principal) {
 		
 		message.setUsername(principal.getName());
-		
 		return message;
 	}
-	
 	@MessageMapping("/chat.private.{username}")
 	public void filterPrivateMessage(@Payload ChatMessage message, @DestinationVariable("username") String username, Principal principal) {
 		
 		message.setUsername(principal.getName());
-
 		simpMessagingTemplate.convertAndSend("/user/" + username + "/exchange/amq.direct/chat.message", message);
 	}
 	

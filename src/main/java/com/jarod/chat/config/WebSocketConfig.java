@@ -19,7 +19,6 @@ public class WebSocketConfig extends AbstractSessionWebSocketMessageBrokerConfig
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
 		registry.enableSimpleBroker("/queue/", "/topic/", "/exchange/");
-		//registry.enableStompBrokerRelay("/queue/", "/topic/", "/exchange/");
 		registry.setApplicationDestinationPrefixes("/app");
 	}
 }

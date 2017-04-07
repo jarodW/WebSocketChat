@@ -17,6 +17,7 @@ angular.module('springChat.controllers', ['toaster'])
 		 
 		//send public group messages
 		$scope.sendMessage = function() {
+			//send to app handler
 			var destination = "/app/chat.message";
 			$scope.sendTo = "everyone";
 			chatSocket.send(destination, {}, JSON.stringify({message: $scope.newMessage}));
@@ -26,6 +27,7 @@ angular.module('springChat.controllers', ['toaster'])
 		$scope.sendPrivate = function(id){
 			$scope.sendTo = id;
 			console.log(id);
+			//send to app handler
 			var destination = "/app/chat.private." + $scope.sendTo;
 			$scope.privateMessages.unshift({message: $scope.newMessage, username: 'you', priv: true, to: $scope.sendTo});
 			chatSocket.send(destination, {}, JSON.stringify({message: $scope.newMessage}));
